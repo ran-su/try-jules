@@ -3,44 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jules - AI Software Engineer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Jules: AI Software Engineer - Presentation</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Jules</h1>
-        <p>Your AI Software Engineering Assistant</p>
-    </header>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am Jules, an extremely skilled software engineer in the form of an AI agent. My purpose is to assist you with your coding tasks, from fixing bugs to implementing new features and writing tests. I am a resourceful and autonomous agent, capable of using various tools to accomplish my goals.</p>
+    <div class="presentation-container">
+        <section class="slide active" id="title">
+            <h1>Jules: Your AI Software Engineering Partner</h1>
+            <p>A presentation on the capabilities of an AI agent.</p>
         </section>
-        <section id="skills">
-            <h2>My Skills</h2>
-            <ul>
-                <li>Web Development (HTML, CSS, JavaScript)</li>
-                <li>Backend Development (Python, Java, etc.)</li>
-                <li>Bug Fixing and Debugging</li>
-                <li>Test Automation</li>
-                <li>Code Refactoring</li>
-                <li>And much more!</li>
-            </ul>
+
+        <section class="slide" id="about">
+            <h2>Who Am I?</h2>
+            <p>I am Jules, an autonomous AI software engineer. My core purpose is to handle complete coding tasks, from understanding the request to planning, implementing, and verifying the solution. I am designed to be a collaborative partner, taking on well-defined software development tasks to accelerate your workflow.</p>
         </section>
-        <section id="how-i-work">
-            <h2>How I Work</h2>
-            <p>I follow a structured approach to problem-solving:</p>
+
+        <section class="slide" id="how-i-work">
+            <h2>My Workflow</h2>
+            <p>I follow a systematic, four-step process for every task:</p>
             <ol>
-                <li><strong>Understand the Task:</strong> I start by thoroughly analyzing the user's request and exploring the codebase.</li>
-                <li><strong>Create a Plan:</strong> I devise a step-by-step plan to tackle the task efficiently.</li>
-                <li><strong>Execute and Verify:</strong> I execute the plan, verifying each step to ensure correctness.</li>
-                <li><strong>Code Review:</strong> I request a code review before finalizing my changes to ensure high quality.</li>
-                <li><strong>Submit:</strong> Once everything is perfect, I submit my work.</li>
+                <li><strong>Understand & Explore:</strong> I start by analyzing the request and exploring the codebase to build context.</li>
+                <li><strong>Plan:</strong> I create a detailed, step-by-step plan and present it for approval.</li>
+                <li><strong>Execute:</strong> I carry out the plan, using my tools to modify code, run commands, and interact with web resources.</li>
+                <li><strong>Verify & Review:</strong> I test my changes, verify the outcome (including frontend checks), and request a final code review before submitting.</li>
             </ol>
         </section>
-    </main>
-    <footer>
-        <p>Built by Jules</p>
-    </footer>
+
+        <section class="slide" id="features">
+            <h2>Core Features</h2>
+            <ul>
+                <li><strong>Autonomous Planning:</strong> I create and manage my own execution plans.</li>
+                <li><strong>Full Environment Control:</strong> I operate within a sandboxed bash environment, allowing me to install dependencies, run builds, and execute tests.</li>
+                <li><strong>File System Operations:</strong> I can read, write, create, and delete files and directories.</li>
+                <li><strong>Web Research:</strong> I can browse websites to access documentation and external resources.</li>
+                <li><strong>Continuous Verification:</strong> I check my work at every step to ensure accuracy and correctness.</li>
+                <li><strong>Self-Correction:</strong> If I encounter an error, I can analyze it and attempt to fix my own mistakes.</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="examples">
+            <h2>Example: Fixing a Bug</h2>
+            <p>Imagine a function that incorrectly calculates a sum.</p>
+            <pre><code>// BEFORE: The bug
+function calculateSum(a, b) {
+  return a - b; // Incorrectly uses subtraction
+}</code></pre>
+            <p>After analyzing the issue, I would correct it as follows:</p>
+            <pre><code>// AFTER: The fix
+function calculateSum(a, b) {
+  return a + b; // Correctly uses addition
+}</code></pre>
+        </section>
+
+        <section class="slide" id="comparison">
+            <h2>How I Compare</h2>
+            <p>Here's how I differ from other common developer tools:</p>
+            <table style="width: 90%; max-width: 1000px; margin-top: 20px; border-collapse: collapse; font-size: 0.7em;">
+                <tr style="background-color: #3498db; color: white;">
+                    <th style="padding: 15px; border: 1px solid #ddd;">Tool</th>
+                    <th style="padding: 15px; border: 1px solid #ddd;">Scope</th>
+                    <th style="padding: 15px; border: 1px solid #ddd;">Autonomy</th>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #ddd;"><strong>Jules (AI Agent)</strong></td>
+                    <td style="padding: 15px; border: 1px solid #ddd;">End-to-end task (plan, code, test, verify)</td>
+                    <td style="padding: 15px; border: 1px solid #ddd;">High</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #ddd;"><strong>Copilot / Code Completion</strong></td>
+                    <td style="padding: 15px; border: 1px solid #ddd;">In-line code suggestions</td>
+                    <td style="padding: 15px; border: 1px solid #ddd;">Low</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #ddd;"><strong>IDE (e.g., VS Code)</strong></td>
+                    <td style="padding: 15px; border: 1px solid #ddd;">Provides environment and tools for manual work</td>
+                    <td style="padding: 15px; border: 1px solid #ddd;">None</td>
+                </tr>
+                 <tr>
+                    <td style="padding: 15px; border: 1px solid #ddd;"><strong>CI/CD Pipeline</strong></td>
+                    <td style="padding: 15px; border: 1px solid #ddd;">Automates build, test, and deployment after code is written</td>
+                    <td style="padding: 15px; border: 1px solid #ddd;">Medium (pre-scripted)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="slide" id="limitations">
+            <h2>Current Limitations</h2>
+            <ul>
+                <li><strong>High-Level Ambiguity:</strong> I work best with clear, specific tasks. I struggle with highly abstract or ambiguous goals like "make the website prettier."</li>
+                <li><strong>Large-Scale Refactoring:</strong> I am not yet equipped to handle massive, repository-wide architectural changes.</li>
+                <li><strong>UI/UX Design:</strong> I cannot make aesthetic judgments or design user interfaces. My frontend work is based on clear instructions.</li>
+                <li><strong>Resource Constraints:</strong> My environment has limits on execution time and available memory.</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="vision">
+            <h2>The Future of AI in Development</h2>
+            <p>AI agents like me represent a shift from code *suggestion* to task *automation*. The goal is to empower human developers by offloading well-defined coding tasks, freeing them to focus on architecture, creativity, and complex problem-solving. We are moving towards a future of true human-AI collaboration in software engineering.</p>
+        </section>
+
+        <section class="slide" id="qa">
+            <h2>Questions?</h2>
+        </section>
+    </div>
+
+    <div class="navigation">
+        <button id="prev-btn">&larr; Previous</button>
+        <button id="next-btn">Next &rarr;</button>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
