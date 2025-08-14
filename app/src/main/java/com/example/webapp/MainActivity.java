@@ -1,28 +1,62 @@
 package com.example.webapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
+
 import android.os.Bundle;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ViewPager2 viewPager;
+    private Button prevButton;
+    private Button nextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        WebView webView = findViewById(R.id.webview);
+        viewPager = findViewById(R.id.view_pager);
+        prevButton = findViewById(R.id.prev_button);
+        nextButton = findViewById(R.id.next_button);
 
-        // Enable JavaScript
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
+        viewPager.setAdapter(new SlideAdapter(this));
 
-        // Set a WebViewClient to open links within the WebView
-        webView.setWebViewClient(new WebViewClient());
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem() - 1, true);
+            }
+        });
 
-        // Load the local HTML file
-        webView.loadUrl("file:///android_asset/index.html");
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
+            }
+        });
+
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                int slideCount = viewPager.getAdapter().getItemCount();
+                prevButton.setEnabled(position > 0);
+                nextButton.setEnabled(position < slideCount - 1);
+            }
+        });
+
+        // Set initial button states
+        // The onPageSelected callback will be called for the initial page, so this is handled there.
+        // We need to set the initial state correctly based on a slide count of more than 0
+        if (viewPager.getAdapter().getItemCount() > 0) {
+            prevButton.setEnabled(false);
+            nextButton.setEnabled(viewPager.getAdapter().getItemCount() > 1);
+        } else {
+            prevButton.setEnabled(false);
+            nextButton.setEnabled(false);
+        }
     }
 }
