@@ -1,29 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp">
+    android:padding="32dp">
 
-    <TextView
-        android:id="@+id/title_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp" />
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@drawable/slide_background"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="48dp">
 
         <TextView
-            android:id="@+id/content_textview"
-            android:layout_width="match_parent"
+            android:id="@+id/title_textview"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp" />
+            android:layout_marginBottom="24dp"
+            android:textAlignment="center"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="34sp"
+            android:textStyle="bold" />
 
-    </ScrollView>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/content_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:textAlignment="center"
+                android:textColor="@color/textColorDefault"
+                android:textSize="20sp" />
+
+        </ScrollView>
+
+    </LinearLayout>
+</FrameLayout>
